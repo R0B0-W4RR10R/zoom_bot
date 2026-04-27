@@ -39,7 +39,6 @@ password = input("Password: ")
 base_name = input("Name: ")
 bots = int(input("Bots: "))
 
-# Прев'ю
 print("\n[CONFIG]")
 print(f"Meeting ID : {meeting_id}")
 print(f"Base name  : {base_name}")
@@ -57,16 +56,12 @@ fail = 0
 
 for i in range(bots):
     try:
-        # Генеруємо ім'я для поточного бота
+   
         if "_" in base_name or base_name.lower() == "bot":
-            # Якщо в імені вже є нижнє підкреслення або це "bot" - додаємо номер
-            bot_name = f"{base_name}_{i+1}"
+                      bot_name = f"{base_name}_{i+1}"
         else:
-            # Інакше просто додаємо номер
+            
             bot_name = f"{base_name}{i+1}"
-        
-        # Альтернативний простий варіант (розкоментуйте і закоментуйте код вище якщо хочете):
-        # bot_name = f"{base_name}_{i+1}" if base_name == "bot" else f"{base_name}{i+1}"
         
         print(f"[{i+1}] Joining as '{bot_name}'...", end=" ")
         
@@ -91,7 +86,6 @@ for i in range(bots):
 
     time.sleep(3)
 
-# Підсумок
 print("\n[RESULT]")
 print(f"Success: {success}")
 print(f"Fail   : {fail}")
